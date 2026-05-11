@@ -19,8 +19,8 @@
 
 **Purpose**: Create shared types and constants required by all user stories.
 
-- [ ] T001 Create all TypeScript types in `src/types/expense.ts` — `Expense`, `ExpenseCategory`, `ExpenseFormInput`, `ValidationResult<T>`, `FilterState`, `SortState`, `CreateExpenseResult`, `DeleteExpenseResult`
-- [ ] T002 [P] Create `EXPENSE_CATEGORIES` constant array in `src/lib/categories.ts` — 8 entries mapping `ExpenseCategory` values to display labels
+- [x] T001 Create all TypeScript types in `src/types/expense.ts` — `Expense`, `ExpenseCategory`, `ExpenseFormInput`, `ValidationResult<T>`, `FilterState`, `SortState`, `CreateExpenseResult`, `DeleteExpenseResult`
+- [x] T002 [P] Create `EXPENSE_CATEGORIES` constant array in `src/lib/categories.ts` — 8 entries mapping `ExpenseCategory` values to display labels
 
 ---
 
