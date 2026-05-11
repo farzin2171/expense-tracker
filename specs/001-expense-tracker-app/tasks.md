@@ -30,9 +30,9 @@
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete.
 
-- [ ] T003 Implement localStorage utilities in `src/lib/storage.ts` — `loadExpenses`, `saveExpenses`, `addExpense`, `removeExpense` per storage-schema.md contract; include `typeof window === 'undefined'` guard
-- [ ] T004 [P] Implement `validateExpenseInput(input: ExpenseFormInput): ValidationResult<Expense>` in `src/server/validation/expense.ts` — reject non-positive amounts, round to 2 d.p., validate `YYYY-MM-DD` date, validate category enum membership, enforce 500-char description limit per data-model.md validation rules
-- [ ] T005 [P] Implement `GET /api/categories` Route Handler in `app/api/categories/route.ts` — imports `EXPENSE_CATEGORIES` from `src/lib/categories.ts`, returns `{ categories }` JSON per api-routes.md contract
+- [x] T003 Implement localStorage utilities in `src/lib/storage.ts` — `loadExpenses`, `saveExpenses`, `addExpense`, `removeExpense` per storage-schema.md contract; include `typeof window === 'undefined'` guard
+- [x] T004 [P] Implement `validateExpenseInput(input: ExpenseFormInput): ValidationResult<Expense>` in `src/server/validation/expense.ts` — reject non-positive amounts, round to 2 d.p., validate `YYYY-MM-DD` date, validate category enum membership, enforce 500-char description limit per data-model.md validation rules
+- [x] T005 [P] Implement `GET /api/categories` Route Handler in `app/api/categories/route.ts` — imports `EXPENSE_CATEGORIES` from `src/lib/categories.ts`, returns `{ categories }` JSON per api-routes.md contract
 
 **Checkpoint**: Foundation ready — user story implementation can begin.
 
