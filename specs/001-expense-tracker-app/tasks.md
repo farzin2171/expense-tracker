@@ -90,10 +90,10 @@
 
 **Purpose**: Visual polish, edge-case verification, and production build validation.
 
-- [ ] T021 [P] Verify all edge cases from spec.md are handled: zero/negative amount rejected with message (validation); description >500 chars truncated in list view with full text on hover (ExpenseItem); future dates accepted (no validation block); empty-state shown when all expenses deleted (ExpenseList)
-- [ ] T022 [P] Review and refine responsive layout — update `app/globals.css` `@theme` tokens and component `className` values in `Dashboard.tsx`, `ExpenseForm.tsx`, `ExpenseList.tsx`, `ExpenseSummary.tsx`, `ExpenseFilters.tsx` for usability on narrow viewports (Tailwind CSS v4)
-- [ ] T023 Run `npm run build` from the repo root and resolve any TypeScript type errors or ESLint violations across all source files
-- [ ] T024 [P] Manually execute all quickstart.md validation flows (add expense, filter by category, filter by date range, sort by date, sort by amount, delete with confirm, delete with cancel, refresh and verify persistence) and fix any regressions
+- [x] T021 [P] Verify all edge cases from spec.md are handled: zero/negative amount rejected with message (validation); description >500 chars truncated in list view with full text on hover (ExpenseItem); future dates accepted (no validation block); empty-state shown when all expenses deleted (ExpenseList)
+- [x] T022 [P] Review and refine responsive layout — update `app/globals.css` `@theme` tokens and component `className` values in `Dashboard.tsx`, `ExpenseForm.tsx`, `ExpenseList.tsx`, `ExpenseSummary.tsx`, `ExpenseFilters.tsx` for usability on narrow viewports (Tailwind CSS v4)
+- [x] T023 Run `npm run build` from the repo root and resolve any TypeScript type errors or ESLint violations across all source files
+- [x] T024 [P] Manually execute all quickstart.md validation flows (add expense, filter by category, filter by date range, sort by date, sort by amount, delete with confirm, delete with cancel, refresh and verify persistence) and fix any regressions
 
 ---
 

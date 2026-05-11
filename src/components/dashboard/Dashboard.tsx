@@ -35,24 +35,26 @@ export function Dashboard({ categories }: Props) {
           <ExpenseForm categories={categories} onAdd={addExpense} />
         </section>
 
-        <section className="dashboard-filters-section">
-          <ExpenseFilters filterState={filterState} setFilter={setFilter} />
-        </section>
+        <div className="dashboard-right-column">
+          <section className="dashboard-filters-section">
+            <ExpenseFilters filterState={filterState} setFilter={setFilter} />
+          </section>
 
-        <section className="dashboard-summary-section">
-          <ExpenseSummary summary={summary} />
-        </section>
+          <section className="dashboard-summary-section">
+            <ExpenseSummary summary={summary} />
+          </section>
 
-        <section className="dashboard-list-section">
-          <h2 className="section-title">Expenses</h2>
-          <ExpenseList
-            expenses={filteredExpenses}
-            totalExpenses={expenses.length}
-            sortState={sortState}
-            setSort={setSort}
-            onDelete={removeExpense}
-          />
-        </section>
+          <section className="dashboard-list-section">
+            <h2 className="section-title">Expenses</h2>
+            <ExpenseList
+              expenses={filteredExpenses}
+              totalExpenses={expenses.length}
+              sortState={sortState}
+              setSort={setSort}
+              onDelete={removeExpense}
+            />
+          </section>
+        </div>
       </main>
     </div>
   )

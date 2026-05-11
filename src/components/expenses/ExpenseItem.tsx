@@ -23,12 +23,12 @@ export function ExpenseItem({ expense, onDelete }: Props) {
       : expense.description
 
   return (
-    <li className="expense-item">
-      <span className="expense-item-amount">${expense.amount.toFixed(2)}</span>
-      <span className="expense-item-date">{expense.date}</span>
-      <span className="expense-item-category">{getCategoryLabel(expense.category)}</span>
+    <li className="expense-item-row">
+      <span className="expense-amount">${expense.amount.toFixed(2)}</span>
+      <span className="expense-date">{expense.date}</span>
+      <span className="expense-category">{getCategoryLabel(expense.category)}</span>
       {truncated !== null && (
-        <span className="expense-item-description" title={expense.description ?? undefined}>
+        <span className="expense-description" title={expense.description ?? undefined}>
           {truncated}
         </span>
       )}
