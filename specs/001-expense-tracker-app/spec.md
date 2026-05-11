@@ -104,9 +104,12 @@ total has updated to reflect the deletion.
 - **FR-002**: System MUST validate that amount is a positive number and that date and
   category are provided before saving an expense.
 - **FR-003**: System MUST display a dashboard listing all recorded expenses in
-  reverse-chronological order.
-- **FR-004**: System MUST show summary statistics on the dashboard: total amount spent
-  and total number of expenses (reflecting any active filters).
+  reverse-chronological order by default.
+- **FR-003a**: System MUST allow the user to sort the expense list by date (ascending /
+  descending) and by amount (ascending / descending).
+- **FR-004**: System MUST show summary statistics on the dashboard: total amount spent,
+  total number of expenses, and a per-category spending breakdown (e.g., "Food & Dining:
+  $150 · Transport: $80") — all reflecting any active filters.
 - **FR-005**: System MUST allow filtering the expense list by category.
 - **FR-006**: System MUST allow filtering the expense list by date range (start date /
   end date).
@@ -133,8 +136,8 @@ total has updated to reflect the deletion.
   regardless of how many expenses are stored (up to 10,000 records).
 - **SC-003**: 100% of entered expenses survive a full browser close-and-reopen cycle
   (no data loss).
-- **SC-004**: Filtering by category or date range returns the correct subset of expenses
-  instantly (no perceptible delay).
+- **SC-004**: Filtering by category or date range, and sorting by date or amount, returns
+  the updated list instantly (no perceptible delay).
 - **SC-005**: A user can delete an expense and have the list and totals update within
   1 second of confirming the deletion.
 
@@ -150,3 +153,10 @@ total has updated to reflect the deletion.
 - Mobile responsiveness is desirable but not a hard requirement for the initial version.
 - There is no edit (update) functionality for existing expenses in this version; users
   can delete and re-add if a correction is needed.
+
+## Clarifications
+
+### Session 2026-05-11
+
+- Q: Beyond reverse-chronological order, should users be able to sort the expense list by other columns? → A: Sort by date (asc/desc) and amount (asc/desc) — two-column sort (Option B)
+- Q: Should the dashboard show a per-category spending breakdown in addition to overall total and count? → A: Overall total + count + per-category spending breakdown as text/table (Option B)
