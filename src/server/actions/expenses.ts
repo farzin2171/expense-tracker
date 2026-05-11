@@ -1,6 +1,6 @@
 'use server'
 
-import type { CreateExpenseResult } from '@/src/types/expense'
+import type { CreateExpenseResult, DeleteExpenseResult } from '@/src/types/expense'
 import { validateExpenseInput } from '@/src/server/validation/expense'
 
 export async function createExpense(formData: FormData): Promise<CreateExpenseResult> {
@@ -24,4 +24,13 @@ export async function createExpense(formData: FormData): Promise<CreateExpenseRe
       createdAt: new Date().toISOString(),
     },
   }
+}
+
+const UUID_V4 = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i
+
+export async function deleteExpense(id: string): Promise<DeleteExpenseResult> {
+  if (!UUID_V4.test(id)) {
+    return { success: false, error: 'Invalid expense ID' }
+  }
+  return { success: true, id }
 }

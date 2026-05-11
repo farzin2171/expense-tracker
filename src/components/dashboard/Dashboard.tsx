@@ -15,6 +15,7 @@ export function Dashboard({ categories }: Props) {
   const {
     expenses,
     addExpense,
+    removeExpense,
     filterState,
     sortState,
     setFilter,
@@ -49,6 +50,7 @@ export function Dashboard({ categories }: Props) {
             totalExpenses={expenses.length}
             sortState={sortState}
             setSort={setSort}
+            onDelete={removeExpense}
           />
         </section>
       </main>

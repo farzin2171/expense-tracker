@@ -78,9 +78,9 @@
 
 **Independent Test**: Add two expenses. Click "Delete" on one and confirm — verify one remains and the total updates. Click "Delete" on the remaining expense and cancel — verify nothing changes.
 
-- [ ] T018 [US3] Add `deleteExpense(id: string): Promise<DeleteExpenseResult>` Server Action to `src/server/actions/expenses.ts` — validates UUID v4 format via regex, returns `DeleteExpenseResult` per server-actions.md contract; extend `useExpenses` hook in `src/hooks/useExpenses.ts` with `removeExpense(id: string): Promise<void>` that calls the Server Action, on success calls `storage.removeExpense(id)` and removes the entry from state
-- [ ] T019 [P] [US3] Build `ConfirmDialog` component in `src/components/ui/ConfirmDialog.tsx` — modal overlay, "Are you sure?" message, "Confirm" and "Cancel" buttons; traps focus while open; dismisses on Escape key; accepts `isOpen`, `onConfirm`, `onCancel` props
-- [ ] T020 [US3] Wire delete into `ExpenseItem` in `src/components/expenses/ExpenseItem.tsx` — render a "Delete" button when `onDelete` prop is provided; show `<ConfirmDialog>` on click; call `onDelete(id)` on confirm, dismiss on cancel; update `Dashboard.tsx` to pass `onDelete={removeExpense}` down through `ExpenseList` to `ExpenseItem`
+- [x] T018 [US3] Add `deleteExpense(id: string): Promise<DeleteExpenseResult>` Server Action to `src/server/actions/expenses.ts` — validates UUID v4 format via regex, returns `DeleteExpenseResult` per server-actions.md contract; extend `useExpenses` hook in `src/hooks/useExpenses.ts` with `removeExpense(id: string): Promise<void>` that calls the Server Action, on success calls `storage.removeExpense(id)` and removes the entry from state
+- [x] T019 [P] [US3] Build `ConfirmDialog` component in `src/components/ui/ConfirmDialog.tsx` — modal overlay, "Are you sure?" message, "Confirm" and "Cancel" buttons; traps focus while open; dismisses on Escape key; accepts `isOpen`, `onConfirm`, `onCancel` props
+- [x] T020 [US3] Wire delete into `ExpenseItem` in `src/components/expenses/ExpenseItem.tsx` — render a "Delete" button when `onDelete` prop is provided; show `<ConfirmDialog>` on click; call `onDelete(id)` on confirm, dismiss on cancel; update `Dashboard.tsx` to pass `onDelete={removeExpense}` down through `ExpenseList` to `ExpenseItem`
 
 **Checkpoint**: User Story 3 complete — all three user stories are independently functional.
 

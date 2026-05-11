@@ -246,3 +246,68 @@ body {
   text-align: center;
   padding: var(--spacing-xl) 0;
 }
+
+/* ── Confirm dialog ── */
+.confirm-overlay {
+  position: fixed;
+  inset: 0;
+  background: color-mix(in srgb, #000 50%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+.confirm-dialog {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: var(--spacing-lg);
+  max-width: 24rem;
+  width: 90%;
+  box-shadow: 0 10px 25px color-mix(in srgb, #000 20%, transparent);
+}
+
+.confirm-dialog-message {
+  font-size: 1rem;
+  color: var(--foreground);
+  margin-bottom: var(--spacing-lg);
+}
+
+.confirm-dialog-actions {
+  display: flex;
+  gap: var(--spacing-sm);
+  justify-content: flex-end;
+}
+
+.confirm-dialog-confirm {
+  padding: 0.5rem 1rem;
+  background: var(--danger);
+  color: #fff;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.confirm-dialog-confirm:hover {
+  background: var(--danger-hover);
+}
+
+.confirm-dialog-cancel {
+  padding: 0.5rem 1rem;
+  background: transparent;
+  color: var(--foreground);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.confirm-dialog-cancel:hover {
+  background: color-mix(in srgb, var(--foreground) 8%, transparent);
+}

@@ -3,6 +3,7 @@
 import { useState, useEffect, useMemo } from 'react'
 import type { Expense, ExpenseCategory, FilterState, SortState } from '@/src/types/expense'
 import * as storage from '@/src/lib/storage'
+import { deleteExpense } from '@/src/server/actions/expenses'
 
 const defaultFilterState: FilterState = {
   category: 'all',
@@ -35,6 +36,14 @@ export function useExpenses() {
 
   function setSort(sort: SortState): void {
     setSortState(sort)
+  }
+
+  async function removeExpense(id: string): Promise<void> {
+    const result = await deleteExpense(id)
+    if (result.success) {
+      storage.removeExpense(result.id)
+      setExpenses((prev) => prev.filter((e) => e.id !== result.id))
+    }
   }
 
   const filteredExpenses = useMemo(() => {
@@ -76,6 +85,7 @@ export function useExpenses() {
   return {
     expenses,
     addExpense,
+    removeExpense,
     filterState,
     sortState,
     setFilter,
