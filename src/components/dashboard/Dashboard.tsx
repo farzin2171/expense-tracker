@@ -3,13 +3,25 @@
 import type { ExpenseCategory } from '@/src/types/expense'
 import { useExpenses } from '@/src/hooks/useExpenses'
 import { ExpenseForm } from '@/src/components/expenses/ExpenseForm'
+import { ExpenseFilters } from '@/src/components/dashboard/ExpenseFilters'
+import { ExpenseSummary } from '@/src/components/dashboard/ExpenseSummary'
+import { ExpenseList } from '@/src/components/dashboard/ExpenseList'
 
 type Props = {
   categories: Array<{ value: ExpenseCategory; label: string }>
 }
 
 export function Dashboard({ categories }: Props) {
-  const { expenses, addExpense } = useExpenses()
+  const {
+    expenses,
+    addExpense,
+    filterState,
+    sortState,
+    setFilter,
+    setSort,
+    filteredExpenses,
+    summary,
+  } = useExpenses()
 
   return (
     <div className="dashboard">
@@ -22,26 +34,22 @@ export function Dashboard({ categories }: Props) {
           <ExpenseForm categories={categories} onAdd={addExpense} />
         </section>
 
+        <section className="dashboard-filters-section">
+          <ExpenseFilters filterState={filterState} setFilter={setFilter} />
+        </section>
+
+        <section className="dashboard-summary-section">
+          <ExpenseSummary summary={summary} />
+        </section>
+
         <section className="dashboard-list-section">
           <h2 className="section-title">Expenses</h2>
-          {expenses.length === 0 ? (
-            <p className="empty-state">No expenses yet. Add your first expense above.</p>
-          ) : (
-            <ul className="expense-list">
-              {expenses.map((expense) => (
-                <li key={expense.id} className="expense-item-row">
-                  <span className="expense-amount">
-                    ${expense.amount.toFixed(2)}
-                  </span>
-                  <span className="expense-date">{expense.date}</span>
-                  <span className="expense-category">{expense.category}</span>
-                  {expense.description && (
-                    <span className="expense-description">{expense.description}</span>
-                  )}
-                </li>
-              ))}
-            </ul>
-          )}
+          <ExpenseList
+            expenses={filteredExpenses}
+            totalExpenses={expenses.length}
+            sortState={sortState}
+            setSort={setSort}
+          />
         </section>
       </main>
     </div>
